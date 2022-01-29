@@ -1,0 +1,3 @@
+package com.borisov.testingrxjava.presenter
+
+internal interface PresenterContract
