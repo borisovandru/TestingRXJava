@@ -7,6 +7,7 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import com.borisov.testingrxjava.model.SearchResponse
+import com.borisov.testingrxjava.presenter.ScheduleProviderStub
 import com.borisov.testingrxjava.presenter.search.SearchPresenter
 import com.borisov.testingrxjava.repository.GitHubRepository
 import com.borisov.testingrxjava.view.search.ViewSearchContract
@@ -64,7 +65,8 @@ class SearchPresenterTestRx {
         )
 
         presenter.searchGitHub(SEARCH_QUERY)
-        Mockito.verify(viewContract, Mockito.times(1)).displayError("Search results or total count are null")
+        Mockito.verify(viewContract, Mockito.times(1))
+            .displayError("Search results or total count are null")
     }
 
     @Test
